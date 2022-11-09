@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.mai.fktb">
 
     <application
@@ -9,136 +10,316 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+        <activity android:name=".FakeJDActivity"
+            android:exported="true">
+            <!--RankingListActivity-->
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="coupon.m.jd.com"
+                    android:path="/ranklist/app_two/hotSaleRankList.action"
+                    android:scheme="https" />
+            </intent-filter>
+            <meta-data
+                android:name="bundleName"
+                android:value="com.jd.lib.rank" />
+
+            <!--com.jingdong.app.mall.open.InterfaceActivity-->
+            <intent-filter android:priority="0x7fffffff">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="openApp.jdMobile"
+                    tools:ignore="AppLinkUrlError" />
+                <data android:scheme="openapp.jdmobile" />
+                <data android:scheme="openjd" />
+                <data android:scheme="jdpay" />
+                <data android:scheme="jdpayopen" />
+            </intent-filter>
+            <intent-filter
+                android:autoVerify="true"
+                android:priority="0x7fffffff">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="3.cn"
+                    android:pathPrefix="/v/"
+                    android:scheme="https" />
+                <data
+                    android:host="3.cn"
+                    android:pathPrefix="/v/"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter android:label="@ref/0x7f0a01db">
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.cat gory.DEFAULT" />
+                <data android:mimeType="image/*" />
             </intent-filter>
         </activity>
-        <activity android:name=".FakeWelcomeActivity">
+
+        <activity android:name=".FakeWelcomeActivity"
+            android:exported="true">
             <intent-filter android:priority="2147483647">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="miui.intent.category.SYSAPP_RECOMMEND"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/channel/act/other/taobao_android" android:scheme="http"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="miui.intent.category.SYSAPP_RECOMMEND" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/channel/act/other/taobao_android"
+                    android:scheme="http" />
             </intent-filter>
             <intent-filter>
-                <action android:name="com.taobao.open.intent.action.GETWAY"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/tbopen/index.htm" android:scheme="tbopen"/>
-                <data android:scheme="http"/>
-                <data android:scheme="https"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/tbopen/index.htm" android:scheme="alitaobao"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/tbopen/index.htm" android:scheme="aliflowcustoms"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/tbopen/index.htm" android:scheme="alitaobao4android"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/tbopen/index.htm" android:scheme="alitaobaoclient"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/tbopen/index.htm" android:scheme="alitaobaolink"/>
+                <action android:name="com.taobao.open.intent.action.GETWAY" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/tbopen/index.htm"
+                    android:scheme="tbopen" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/tbopen/index.htm"
+                    android:scheme="alitaobao" />
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/tbopen/index.htm"
+                    android:scheme="aliflowcustoms" />
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/tbopen/index.htm"
+                    android:scheme="alitaobao4android" />
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/tbopen/index.htm"
+                    android:scheme="alitaobaoclient" />
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/tbopen/index.htm"
+                    android:scheme="alitaobaolink" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/tbopen/index.htm" android:scheme="tbopen"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/tbopen/index.htm" android:scheme="taobao"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/tbopen/index.htm" android:scheme="http"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/tbopen/index.htm" android:scheme="alitaobao"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/tbopen/index.htm" android:scheme="aliflowcustoms"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/tbopen/index.htm" android:scheme="alitaobao4android"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/tbopen/index.htm" android:scheme="alitaobaoclient"/>
-                <data android:host="m.taobao.com" android:pathPrefix="/tbopen/index.htm" android:scheme="alitaobaolink"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/tbopen/index.htm"
+                    android:scheme="tbopen" />
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/tbopen/index.htm"
+                    android:scheme="taobao" />
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/tbopen/index.htm"
+                    android:scheme="http" />
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/tbopen/index.htm"
+                    android:scheme="alitaobao" />
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/tbopen/index.htm"
+                    android:scheme="aliflowcustoms" />
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/tbopen/index.htm"
+                    android:scheme="alitaobao4android" />
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/tbopen/index.htm"
+                    android:scheme="alitaobaoclient" />
+                <data
+                    android:host="m.taobao.com"
+                    android:pathPrefix="/tbopen/index.htm"
+                    android:scheme="alitaobaolink" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="m.taobao.com" android:path="/index.htm" android:scheme="http"/>
-                <data android:host="m.taobao.com" android:path="/index.htm" android:scheme="https"/>
-                <data android:host="m.taobao.com" android:path="/homepage/preview.htm" android:scheme="http"/>
-                <data android:host="m.taobao.com" android:path="/homepage/preview.htm" android:scheme="https"/>
-                <data android:host="h5.m.taobao.com" android:path="/index.html" android:scheme="http"/>
-                <data android:host="h5.m.taobao.com" android:path="/index.html" android:scheme="https"/>
-                <data android:scheme="taobao"/>
-                <data android:host="copyhomecache.m.taobao.com" android:path="/index.html" android:scheme="http"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="m.taobao.com"
+                    android:path="/index.htm"
+                    android:scheme="http" />
+                <data
+                    android:host="m.taobao.com"
+                    android:path="/index.htm"
+                    android:scheme="https" />
+                <data
+                    android:host="m.taobao.com"
+                    android:path="/homepage/preview.htm"
+                    android:scheme="http" />
+                <data
+                    android:host="m.taobao.com"
+                    android:path="/homepage/preview.htm"
+                    android:scheme="https" />
+                <data
+                    android:host="h5.m.taobao.com"
+                    android:path="/index.html"
+                    android:scheme="http" />
+                <data
+                    android:host="h5.m.taobao.com"
+                    android:path="/index.html"
+                    android:scheme="https" />
+                <data android:scheme="taobao" />
+                <data
+                    android:host="copyhomecache.m.taobao.com"
+                    android:path="/index.html"
+                    android:scheme="http" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:host="h5.m.taobao.com" android:scheme="http"/>
-                <data android:path="/we/index.htm"/>
-                <data android:scheme="taobao"/>
-                <data android:scheme="https"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="h5.m.taobao.com"
+                    android:scheme="http" />
+                <data android:path="/we/index.htm" />
+                <data android:scheme="taobao" />
+                <data android:scheme="https" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="message" android:path="/root" android:scheme="taobao"/>
-                <data android:host="message" android:path="/root" android:scheme="http"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="message"
+                    android:path="/root"
+                    android:scheme="taobao" />
+                <data
+                    android:host="message"
+                    android:path="/root"
+                    android:scheme="http" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="d.m.taobao.com" android:path="/new_my_bag.htm" android:scheme="http"/>
-                <data android:host="d.m.taobao.com" android:path="/new_my_bag.htm" android:scheme="https"/>
-                <data android:scheme="taobao"/>
-                <data android:path="/myBag.htm"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="d.m.taobao.com"
+                    android:path="/new_my_bag.htm"
+                    android:scheme="http" />
+                <data
+                    android:host="d.m.taobao.com"
+                    android:path="/new_my_bag.htm"
+                    android:scheme="https" />
+                <data android:scheme="taobao" />
+                <data android:path="/myBag.htm" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="taobao"/>
-                <data android:host="h5.m.taobao.com" android:path="/awp/base/newcart.htm" android:scheme="http"/>
-                <data android:host="h5.m.taobao.com" android:path="/awp/base/newcart.htm" android:scheme="https"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="taobao" />
+                <data
+                    android:host="h5.m.taobao.com"
+                    android:path="/awp/base/newcart.htm"
+                    android:scheme="http" />
+                <data
+                    android:host="h5.m.taobao.com"
+                    android:path="/awp/base/newcart.htm"
+                    android:scheme="https" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="newcart.taobao.com" android:path="/my_cart.htm" android:scheme="http"/>
-                <data android:host="newcart.taobao.com" android:path="/my_cart.htm" android:scheme="https"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="newcart.taobao.com"
+                    android:path="/my_cart.htm"
+                    android:scheme="http" />
+                <data
+                    android:host="newcart.taobao.com"
+                    android:path="/my_cart.htm"
+                    android:scheme="https" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="newcart.m.tmall.com" android:path="/cart/myCart.htm" android:scheme="http"/>
-                <data android:host="newcart.m.tmall.com" android:path="/cart/myCart.htm" android:scheme="https"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="newcart.m.tmall.com"
+                    android:path="/cart/myCart.htm"
+                    android:scheme="http" />
+                <data
+                    android:host="newcart.m.tmall.com"
+                    android:path="/cart/myCart.htm"
+                    android:scheme="https" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="my.m.taobao.com" android:path="/myTaobao.htm" android:scheme="http"/>
-                <data android:scheme="taobao"/>
-                <data android:scheme="https"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="my.m.taobao.com"
+                    android:path="/myTaobao.htm"
+                    android:scheme="http" />
+                <data android:scheme="taobao" />
+                <data android:scheme="https" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.mytaobao"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.mytaobao" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="i.taobao.com" android:path="/my_taobao.htm" android:scheme="http"/>
-                <data android:host="my.m.taobao.com"/>
-                <data android:scheme="https"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="i.taobao.com"
+                    android:path="/my_taobao.htm"
+                    android:scheme="http" />
+                <data android:host="my.m.taobao.com" />
+                <data android:scheme="https" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="h5.m.taobao.com" android:path="/awp/mtb/mtb.htm" android:scheme="http"/>
-                <data android:scheme="https"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="h5.m.taobao.com"
+                    android:path="/awp/mtb/mtb.htm"
+                    android:scheme="http" />
+                <data android:scheme="https" />
             </intent-filter>
         </activity>
     </application>
