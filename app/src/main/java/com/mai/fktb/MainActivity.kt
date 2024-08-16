@@ -1,22 +1,21 @@
 package com.mai.fktb
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.ComponentName
 import android.content.Intent
 import android.net.Uri
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
-import kotlinx.android.synthetic.main.activity_main.*
-import java.net.URI
+import android.widget.Button
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
 
     @SuppressLint("WrongConstant")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        button.setOnClickListener {
+        findViewById<Button>(R.id.button).setOnClickListener {
             val intent = Intent()
             intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
             intent.data = Uri.parse("package:$packageName")
@@ -24,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        button2.setOnClickListener {
+        findViewById<Button>(R.id.button2).setOnClickListener {
             val intent = Intent()
             intent.action = Intent.ACTION_VIEW
             intent.addCategory(Intent.CATEGORY_DEFAULT)
@@ -34,4 +33,5 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
 }

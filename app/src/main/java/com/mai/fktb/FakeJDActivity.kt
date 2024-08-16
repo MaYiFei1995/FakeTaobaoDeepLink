@@ -1,9 +1,9 @@
 package com.mai.fktb
 
+import android.app.Activity
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 
-class FakeJDActivity : AppCompatActivity() {
+class FakeJDActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
