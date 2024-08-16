@@ -8,7 +8,300 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
+        <activity
+            android:name=".FakeDLActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:taskAffinity="rpk.loader.entry">
 
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="hwfastapp" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="hapjs.org"
+                    android:pathPrefix="/app"
+                    android:scheme="https" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="hapjs.org"
+                    android:pathPrefix="/app"
+                    android:scheme="http" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="app"
+                    android:scheme="hap" />
+            </intent-filter>
+            <intent-filter>
+
+                <action android:name="com.huawei.fastapp.ACTION_MANAGER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="com.huawei.fastapp.app.manager.action.SHORTCUT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="center"
+                    android:pathPrefix="/jump"
+                    android:scheme="hwfastcenter" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="hapjs.org"
+                    android:pathPrefix="/app"
+                    android:scheme="http" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="backgroundpromote" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="hapjs.org"
+                    android:pathPrefix="/app"
+                    android:scheme="https" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="app"
+                    android:scheme="hap" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="app"
+                    android:scheme="hap" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="com.oplus.nfc.action.DIRECT_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="app"
+                    android:scheme="hap" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="hapjs.org"
+                    android:pathPrefix="/app"
+                    android:scheme="https" />
+
+                <data
+                    android:host="qr.quickapp.cn"
+                    android:pathPattern="/app/.*"
+                    android:scheme="http" />
+
+                <data
+                    android:host="qr.quickapp.cn"
+                    android:pathPattern="/app/.*"
+                    android:scheme="https" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="swan"
+                    android:scheme="heytapswan" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="com.nearme.instant.action.LAUNCH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="instant"
+                    android:pathPrefix="/app"
+                    android:scheme="oaps" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="com.nearme.instant.action.PUSH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="game"
+                    android:scheme="hap" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.instant.on_stack" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="game"
+                    android:scheme="hap" />
+
+                <data
+                    android:host="on_game_stack"
+                    android:scheme="hap" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="instant"
+                    android:pathPrefix="/game"
+                    android:scheme="oaps" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="oplus.intent.action.MINI_LAUNCHER_MAIN" />
+
+                <category android:name="android.intent.category.SECONDARY_HOME" />
+
+                <category android:name="oplus.intent.category.MINI_LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.oplus.secondaryhome.continuous"
+                android:value="false" />
+
+            <intent-filter>
+
+                <action android:name="oplus.intent.action.WIDGET_ENTRY" />
+
+                <category android:name="android.intent.category.SECONDARY_HOME" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action
+                    android:name="com.baidu.searchbox.action.aiapps.LAUNCH" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
 
         <activity
             android:name=".FakeJDActivity"
@@ -324,6 +617,16 @@
                 <data android:scheme="https" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

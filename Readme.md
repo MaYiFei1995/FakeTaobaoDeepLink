@@ -1,21 +1,17 @@
 # Fake Taobao Deeplink
 
-复制 ** com.taobao.tao.welcome.Welcome ** 的intent-filter来拦截误触广告后自动拉起淘宝app
+## Intent-Filter
 
-***
+### JD
 
-> Bilibili 优酷 芒果TV可以拦截；斗鱼TV拦截后无法正常进入应用需要手动点跳转
->
-> 微博会判断拉起淘宝是否成功，第一次拦截后下一次跳转淘宝会改用显示Intent拉起，**需要使用手机系统自带的应用双开避免**
->
-> 咸鱼的淘宝商品也可以拦截
->
-> Chrome跳转无法拦截
+- 复制了``中``对应的`intent-filter`
 
-***
+### TB
 
-- 效果图
-  ![淘宝效果图](./imgs/2.jpg)
-  ![京东效果图](./imgs/3.jpg)
-- 应用界面
-  ![应用界面](./imgs/1.jpg)
+- 复制了``中`com.taobao.tao.welcome.Welcome`对应的`intent-filter`
+
+### QuickAPP
+
+- 复制了`com.huawei.fastapp`中`com.huawei.fastapp.app.processManager.DeepLinkActivity`对应的`intent-filter`
+
+- 复制了`com.nearme.instant.platform`中`com.nearme.instant.platform.dispatch.activity.HapDispatcherActivity`对应的`intent-filter`
